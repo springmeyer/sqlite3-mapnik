@@ -14,7 +14,28 @@ Standalone sqlite plugin
     make -j4 && make install
     cd ../../
     svn co http://svn.mapnik.org/trunk/plugins/input/sqlite/ sqlite_sources
+    patch sqlite_sources/sqlite_datasource.cpp sqlite_datasource_name.diff
     make
+    # move any existing plugin out of the way to avoid segfaults
+    mv `mapnik-config --input-plugins`/sqlite.input sqlite_plugin.backup
+
+
+
+# Test:
+
+If you have node and node-mapnik installed do:
+
+    node test.js
+
+
+This should print some json about the data.
+
+
+# Done testing?
+
+Move the old sqlite plugin back into place:
+
+    mv sqlite_plugin.backup `mapnik-config --input-plugins`/sqlite.input 
 
 
 # Usage:

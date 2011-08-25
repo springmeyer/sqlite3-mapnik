@@ -6,8 +6,10 @@ if (!mapnik.register_datasources('/Users/dane/projects/sqlite-mapnik')) {
 
 var options = {
    type: "sqlite3",
-   file: "world.sqlite"
+   file: "data/world.sqlite",
+   table: "world_merc"
 }
 
 var ds = new mapnik.Datasource(options);
 
+console.log(ds.describe())
