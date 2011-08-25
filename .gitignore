@@ -1,3 +1,4 @@
 .DS_Store
 deps/build
 deps/sqlite-autoconf-3070701
+sqlite_sources
