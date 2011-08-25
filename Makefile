@@ -1,6 +1,6 @@
 CXX = g++
 
-CXXFLAGS = -O3 -Isqlite_sources/ $(shell mapnik-config --cflags)
+CXXFLAGS = -fPIC -O3 -Isqlite_sources/ $(shell mapnik-config --cflags)
 
 LIBS = -Ldeps/build/lib -lsqlite3 $(shell mapnik-config --libs --ldflags) -licuuc
 
@@ -13,7 +13,7 @@ BIN = sqlite3.input
 all : $(SRC) $(BIN)
 
 $(BIN) : $(OBJ)
-	$(CXX) -dynamiclib $(OBJ) $(LIBS) -o $@  
+	$(CXX) -shared $(OBJ) $(LIBS) -o $@  
 
 .cpp.o :
 	$(CXX) -c $(CXXFLAGS) $< -o $@
