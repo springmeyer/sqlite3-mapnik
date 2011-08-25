@@ -26,8 +26,11 @@ If you have node and node-mapnik installed do:
 
     node test.js
 
+If not install node-mapnik with npm:
 
-This should print some json about the data.
+    npm install mapnik
+
+The `node test.js` should print some json about the data.
 
 
 # Done testing?
@@ -35,13 +38,3 @@ This should print some json about the data.
 Move the old sqlite plugin back into place:
 
     mv sqlite_plugin.backup `mapnik-config --input-plugins`/sqlite.input 
-
-
-# Usage:
-
-This will create an sqlite3.input (as apposed to the sqlite.input installed by mapnik).
-
-Datasources can then be created by copying this to `mapnik-config --input-plugins` and referencing it like:
-
-    mapnik.Datsource({type : "sqlite3"});
-
