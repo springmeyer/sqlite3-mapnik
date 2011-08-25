@@ -1,0 +1,13 @@
+Index: sqlite_datasource.cpp
+===================================================================
+--- sqlite_datasource.cpp	(revision 3198)
++++ sqlite_datasource.cpp	(working copy)
+@@ -545,7 +545,7 @@
+ 
+ std::string sqlite_datasource::name()
+ {
+-   return "sqlite";
++   return "sqlite3";
+ }
+ 
+ int sqlite_datasource::type() const
