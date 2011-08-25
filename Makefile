@@ -8,7 +8,7 @@ SRC = $(wildcard sqlite_sources/*.cpp)
 
 OBJ = $(SRC:.cpp=.o)
 
-BIN = sqlite3.input
+BIN = sqlite.input
 
 all : $(SRC) $(BIN)
 

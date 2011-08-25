@@ -9,12 +9,11 @@ Standalone sqlite plugin
     mkdir -p build
     tar xvf sqlite-autoconf-3070701.tar.gz
     cd sqlite-autoconf-3070701/
-    export CFLAGS="-DSQLITE_ENABLE_RTREE=1 -O3"
+    export CFLAGS="-DSQLITE_ENABLE_RTREE=1 -O3 -fPIC"
     ./configure --prefix=`pwd`/../build --enable-static --disable-shared
     make -j4 && make install
     cd ../../
     svn co http://svn.mapnik.org/trunk/plugins/input/sqlite/ sqlite_sources
-    patch sqlite_sources/sqlite_datasource.cpp sqlite_datasource_name.diff
     make
     # move any existing plugin out of the way to avoid segfaults
     mv `mapnik-config --input-plugins`/sqlite.input sqlite_plugin.backup

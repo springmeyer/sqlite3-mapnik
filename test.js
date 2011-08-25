@@ -5,7 +5,7 @@ if (!mapnik.register_datasources('/Users/dane/projects/sqlite-mapnik')) {
 }
 
 var options = {
-   type: "sqlite3",
+   type: "sqlite",
    file: "data/world.sqlite",
    table: "world_merc"
 }
