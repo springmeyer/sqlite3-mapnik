@@ -1,6 +1,6 @@
 var mapnik = require('mapnik');
 
-if (!mapnik.register_datasources('/Users/dane/projects/sqlite-mapnik')) {
+if (!mapnik.register_datasources('./')) {
     console.log('failed to register any new datasources');
 }
 
