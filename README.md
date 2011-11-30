@@ -5,6 +5,8 @@ Standalone sqlite plugin
 
 ## Setup
 
+Unpack and build sqlite3
+
     cd deps
     mkdir -p build
     tar xvf sqlite-autoconf-3070701.tar.gz
@@ -13,12 +15,19 @@ Standalone sqlite plugin
     ./configure --prefix=`pwd`/../build --enable-static --disable-shared
     make -j4 && make install
     cd ../../
-    svn co http://svn.mapnik.org/trunk/plugins/input/sqlite/ sqlite_sources
+
+Plugin Mapnik's sqlite plugin locally
+
+    git clone git://github.com/mapnik/mapnik.git mapnik_sources
+    cp -r mapnik_sources/plugins/input/sqlite sqlite_sources
+
+Now, make any changes to the mapnik sqlite sources and build locally like:
+
     make
-    # move any existing plugin out of the way to avoid segfaults
+
+To be able to test your local `sqlite.input` you need to move the globally installed one aside:
+
     mv `mapnik-config --input-plugins`/sqlite.input sqlite_plugin.backup
-
-
 
 ## Test
 
