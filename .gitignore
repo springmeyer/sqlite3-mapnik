@@ -2,3 +2,4 @@
 deps/build
 deps/sqlite-autoconf-3070701
 sqlite_sources
+node_modules

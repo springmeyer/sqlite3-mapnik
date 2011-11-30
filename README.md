@@ -3,7 +3,7 @@
 Standalone sqlite plugin
 
 
-# Setup
+## Setup
 
     cd deps
     mkdir -p build
@@ -20,7 +20,7 @@ Standalone sqlite plugin
 
 
 
-# Test:
+## Test
 
 If you have node and node-mapnik installed do:
 
@@ -33,8 +33,17 @@ If not install node-mapnik with npm:
 The `node test.js` should print some json about the data.
 
 
-# Done testing?
+## Done testing?
 
 Move the old sqlite plugin back into place:
 
     mv sqlite_plugin.backup `mapnik-config --input-plugins`/sqlite.input 
+
+
+## Troubleshooting
+
+If the plugin compiles but mapnik does not recognize it as valid, try
+opening it with python's ctypes which may reveal linking errors:
+
+    import ctypes
+    ctypes.CDLL('./sqlite.input')
