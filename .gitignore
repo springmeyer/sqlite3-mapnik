@@ -1,5 +1,5 @@
 .DS_Store
 deps/build
-deps/sqlite-autoconf-3070701
+deps/sqlite-autoconf-3070900
 sqlite_sources
 node_modules

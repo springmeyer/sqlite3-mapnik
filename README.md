@@ -9,8 +9,8 @@ Unpack and build sqlite3
 
     cd deps
     mkdir -p build
-    tar xvf sqlite-autoconf-3070701.tar.gz
-    cd sqlite-autoconf-3070701/
+    tar xvf sqlite-autoconf-3070900.tar.gz
+    cd sqlite-autoconf-3070900/
     export CFLAGS="-DSQLITE_ENABLE_RTREE=1 -O3 -fPIC"
     ./configure --prefix=`pwd`/../build --enable-static --disable-shared
     make -j4 && make install
